@@ -7,7 +7,7 @@ function LoginForm({name}) {
 	
 	return (
 		<>
-			<Card className=" flex flex-col gap-1 p-4 text-2xl shadow-2xl">
+			<Card className=" flex flex-col sm:p-4 p-0 text-xl sm:text-2xl shadow-2xl transition-all">
 				<CardHeader>
 					<CardTitle className='text-center leading-8'>
 						Welcome to <span>{name}</span>
