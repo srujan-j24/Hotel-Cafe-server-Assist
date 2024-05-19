@@ -11,14 +11,18 @@ function LoginForm({name}) {
 						<br/>
 						Server Assist
 					</CardTitle>
+				
 				</CardHeader>
 				<CardContent className='flex flex-col gap-4'>
+					<CardDescription>
+						Please enter you credentails:
+					</CardDescription>
 					<Input type='text' placeholder='Username' className='text-lg'></Input>
 					<Input type='password' placeholder='Password' className='text-lg'></Input>
 				</CardContent>
 				<CardFooter className='flex flex-col gap-2'>
 					<Button className='w-full text-lg'>Login</Button>
-					<Button variant='link' className=''>Forgot Password ?</Button>
+					<Button variant='link' className='text-primary-foreground'>Forgot Password ?</Button>
 				</CardFooter>
 				
 
