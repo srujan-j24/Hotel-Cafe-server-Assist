@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { Button } from '../../ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../ui/card'
 import { Input } from '../../ui/input'
 function LoginForm({name}) {
+	let [desc, setDesc] = useState('Please enter you credentials');
+	
 	return (
 		<>
-			<Card className="w-96 flex flex-col gap-1 p-4 text-2xl shadow-2xl">
+			<Card className=" flex flex-col gap-1 p-4 text-2xl shadow-2xl">
 				<CardHeader>
 					<CardTitle className='text-center leading-8'>
 						Welcome to <span>{name}</span>
@@ -15,7 +18,7 @@ function LoginForm({name}) {
 				</CardHeader>
 				<CardContent className='flex flex-col gap-4'>
 					<CardDescription>
-						Please enter you credentails:
+						{desc}
 					</CardDescription>
 					<Input type='text' placeholder='Username' className='text-lg'></Input>
 					<Input type='password' placeholder='Password' className='text-lg'></Input>
