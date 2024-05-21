@@ -7,7 +7,7 @@ const LoginPage = ({children}) => {
         <>
             <main className='h-svh w-screen flex flex-col justify-center items-center bg-background' style={{backgroundImage: `url(${backgroundSvg})`, backgroundPosition: 'center'}}>
                 {children}
-                <div className='transition-all grow flex items-center justify-center'>
+                <div className='transition-all grow flex items-center justify-center mx-4'>
                     <LoginForm name='roll corner'></LoginForm>
                 </div>
             </main>
