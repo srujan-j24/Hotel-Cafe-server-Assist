@@ -9,7 +9,7 @@ function LoginForm({name}) {
 	
 	return (
 		<>
-			<Card className="flex flex-col max-w-96 min-w-80 p-4 text-xl sm:text-2xl shadow-2xl transition-all">
+			<Card className="flex flex-col min-w-80 p-4 text-xl sm:text-2xl shadow-2xl transition-all">
 				<CardHeader>
 					<CardTitle className='text-center leading-8'>
 						Welcome to Server Assist
