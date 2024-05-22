@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Button } from '../../ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../../ui/card'
 import { Input } from '../../ui/input'
+import { Link } from 'react-router-dom';
 function LoginForm({name}) {
 	let [desc, setDesc] = useState("Please enter your credentials");
 	
@@ -23,7 +24,9 @@ function LoginForm({name}) {
 					<Input type='password' placeholder='Password' className='text-lg'></Input>
 				</CardContent>
 				<CardFooter className='flex flex-col gap-2'>
-					<Button className='w-full text-lg'>Login</Button>
+					<Button className='w-full text-lg'>
+						<Link to='serve'>Login</Link>
+					</Button>
 					<Button variant='link' className='text-primary-foreground'>Forgot Password ?</Button>
 				</CardFooter>
 				
