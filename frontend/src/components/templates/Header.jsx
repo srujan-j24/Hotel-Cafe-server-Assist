@@ -11,7 +11,7 @@ function Header() {
     const ClientName = "Roll's Corner";
     const [nav, setNav] = useState(false)
     useEffect(()=>{
-        // setNav(true)
+        setNav(true)
     }, [])
     return (
         <>
