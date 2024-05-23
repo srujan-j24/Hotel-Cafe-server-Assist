@@ -15,7 +15,7 @@ function Header() {
     }, [])
     return (
         <>
-            <nav className="flex bg-primary w-full items-center mt-0 sm:px-6  px-4 h-12">
+            <nav className="z-10 flex bg-primary w-full items-center mt-0 sm:px-6 absolute top-0 px-4 h-12">
                 <h1 className="font-semibold text-foreground text-2xl">{ClientName}</h1>
                 { nav && 
                 <Sheet>

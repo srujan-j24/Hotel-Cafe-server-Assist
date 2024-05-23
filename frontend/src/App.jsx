@@ -3,15 +3,14 @@ import './App.css'
 import Header from './components/templates/Header'
 import { Outlet } from 'react-router-dom'
 import backgroundSvg from './assets/background.svg'
+import { ScrollArea } from './components/ui/scroll-area'
 function App() {
 
   return (
     <>
-      <div className='h-svh w-screen flex flex-col' style={{backgroundImage: `url(${backgroundSvg})`, backgroundPosition: 'center'}}>
+      <div className='min-h-svh relative' style={{backgroundImage: `url(${backgroundSvg})`, backgroundPosition: 'center'}}>
         <Header></Header>
-        <main className=' flex flex-col justify-center items-center grow' >
-          <Outlet></Outlet>
-        </main>
+        <Outlet></Outlet>
       </div>
     </>
   )
