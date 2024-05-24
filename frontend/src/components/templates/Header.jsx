@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 function Header() {
     const ClientName = "Roll's Corner";
@@ -13,6 +14,7 @@ function Header() {
     useEffect(()=>{
         setNav(true)
     }, [])
+    const dispatch = useDispatch();
     return (
         <>
             <nav className="z-10 flex bg-primary w-full items-center mt-0 sm:px-6 absolute top-0 px-4 h-12">

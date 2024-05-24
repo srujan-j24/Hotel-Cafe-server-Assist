@@ -1,20 +1,19 @@
-import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import TableCard from "./TableCard";
-import { useState } from "react";
+import { useRef } from "react";
+import TableDialog from "./TableDialog";
+import Tables from "./Tables";
 
 function ServePage() {
-    const tables = Array.from({length: 12}).map((_, i)=> i+1);
+
+    const dialogRef = useRef(null);
+
     return (
-        <>
+        <>  
             <ScrollArea className="h-svh pt-12">
-                <div className="flex flex-wrap w-full gap-y-6 gap-x-1 justify-evenly py-8 transition-all ">
-                {
-                    tables.map((table) => (
-                        <TableCard key={table} num={table}></TableCard>
-                    ))
-                }   
+                <div className="grid auto-fit-20 place-items-center gap-y-6 py-6 px-4 gap-x-4" id='tables-grid'>
+                    <Tables dialogRef={dialogRef}></Tables>
                 </div>
+                <TableDialog ref={dialogRef}></TableDialog>
             </ScrollArea>
         </>
     );
