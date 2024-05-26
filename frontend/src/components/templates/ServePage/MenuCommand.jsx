@@ -1,14 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Command, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Cross1Icon } from "@radix-ui/react-icons";
 import { useRef, useState } from "react";
 
 
-function MenuCommand() {
+function MenuCommand({className}) {
     const [open, setOpen] = useState(false);
-    // const [value, setValue] = useState("");
+    const [value, setValue] = useState("");
     const inputRef = useRef(null);
     const menu  = [
   "Butter Chicken",
@@ -42,32 +40,25 @@ function MenuCommand() {
   "Lassi",
   "Pongal"
 ];
-
     return (
         <>
-            {/* <div className={`relative w-96 flex items-center bg-secondary`} onBlur={()=>{}}>
-                <Input className='w-full text-lg bg-white z-10' ref={inputRef} onFocus={()=>{setOpen(true)}} ></Input>
-                <Button className="shadow-none absolute right-1 bg-primary-background rounded-full z-20 " size="s_r" variant="ghost" onClick={()=>{inputRef.current.value = '';inputRef.current.focus()}}>
-                    <Cross1Icon />
-                </Button>
-                <div className={`${open? '': 'hidden'}  border bg-background absolute w-full top-0 rounded-md`}>
-                    <ScrollArea className=" max-h-[20rem] pt-9 box-content w-full rounded-md">
-                        {
-                            menu.map(item => (<div key={item}>{item}</div>))
-                        }
-                    </ScrollArea>
-                </div>
-            </div> */}
-            <div className="relative grow ">
+            {/* <div className="relative grow" >
                 <Command>
-                    <CommandInput onFocus={()=>{setOpen(true)}} onBlur={()=>{setOpen(false)}}/>
-                    {open && 
-                        <CommandList className="absolute z-50 w-full top-full [&::-webkit-scrollbar]:hidden"> {
-                                menu.map(item => (<CommandItem key={item}>{item}</CommandItem>))
+                    <CommandInput onFocus={()=>setOpen(true)} ref={inputRef}/>
+                        <CommandList className={`absolute z-50 w-full top-full [&::-webkit-scrollbar]:hidden ${open? '': 'hidden'}`}> 
+                            {
+                                menu.map(item => (<CommandItem className='cmd-item' key={item} value={item} onSelect={(val)=>{setValue(val);inputRef.current.value = val}}>{item}</CommandItem>))
                             }
                         </CommandList>
-                    }
                 </Command>
+            </div> */}
+            <div className={`relative ${className} `}>
+                <Input ref={inputRef} onFocus={()=>{setOpen(true)}} onBlur={()=>setOpen(false)}/>
+                <div className={`${open? '':'hidden'} mt-2 absolute max-h-[300px] overflow-y-auto overflow-x-hidden w-full z-10 [&::-webkit-scrollbar]:hidden border rounded-md shadow-lg`}>
+                    {
+                        menu.map(item => (<div className="relative flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 border border-x-0 border-t-0 hover:bg-secondary bg-background" key={item} value={item} onSelect={(val)=>{setValue(val);inputRef.current.value = val}}>{item}</div>))
+                    }
+                </div>
             </div>
             <Button>Add</Button>
         </>

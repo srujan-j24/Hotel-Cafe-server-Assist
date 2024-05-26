@@ -4,9 +4,10 @@ import { Dialog, DialogContent, DialogHeader, DialogTrigger, DialogTitle, Dialog
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { Cross1Icon } from "@radix-ui/react-icons";
+import { Cross1Icon, MinusCircledIcon, PlusCircledIcon, TriangleDownIcon, TriangleUpIcon } from "@radix-ui/react-icons";
 import { useSelector } from "react-redux";
 import MenuCommand from "./MenuCommand";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 
 function TableDialog(props, ref) {
@@ -34,14 +35,28 @@ function TableDialog(props, ref) {
                         </DialogDescription>
                         <Separator/>
                         <div className="flex gap-2 text-lg items-start">
-                            <MenuCommand ></MenuCommand>
+                            <MenuCommand className='grow'></MenuCommand>
                         </div>
                     </DialogHeader>
                     <ScrollArea className="h-[55svh]">
-                        
-                        {
-                            menu.map(item => (<div key={item}>{item}</div>))
-                        }
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHead className='w-7/12'>Items</TableHead>
+                                    <TableHead>Quantity</TableHead>
+                                    <TableHead>Price</TableHead>
+                                    <TableHead></TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell>Paneer cheese roll</TableCell>
+                                    <TableCell>2</TableCell>
+                                    <TableCell>90</TableCell>
+                                    <TableCell><TriangleUpIcon/><TriangleDownIcon/></TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
                     </ScrollArea>
                 </DialogContent>
         </Dialog>
