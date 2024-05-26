@@ -12,7 +12,7 @@ const initialState = {
         },
         {
             no: 2,
-            status: 'vacant',
+            status: 'occupied',
             people: 0,
             items: []
         },

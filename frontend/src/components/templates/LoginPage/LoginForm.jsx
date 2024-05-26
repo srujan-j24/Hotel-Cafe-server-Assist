@@ -21,7 +21,7 @@ function LoginForm({name}) {
 				</CardHeader>
 				<CardContent className='flex flex-col gap-4'>
 					<Input type='text' placeholder='Username' className='text-lg'></Input>
-					<Input type='password' placeholder='Password' className='text-lg'></Input>
+					<Input type='password' placeholder='Password' className='text-lg' ></Input>
 				</CardContent>
 				<CardFooter className='flex flex-col gap-2'>
 					<Button className='w-full text-lg' onClick={()=>{navigate('serve')}}>
