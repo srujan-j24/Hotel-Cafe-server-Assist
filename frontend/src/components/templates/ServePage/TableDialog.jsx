@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTrigger, DialogTitle, Dialog
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { Cross1Icon, MinusCircledIcon, PlusCircledIcon, TriangleDownIcon, TriangleUpIcon } from "@radix-ui/react-icons";
+import { Cross1Icon, MinusCircledIcon, MinusIcon, PlusCircledIcon, PlusIcon, TriangleDownIcon, TriangleLeftIcon, TriangleRightIcon, TriangleUpIcon } from "@radix-ui/react-icons";
 import { useSelector } from "react-redux";
 import MenuCommand from "./MenuCommand";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -34,7 +34,7 @@ function TableDialog(props, ref) {
                             <span>Total : 240</span>
                         </DialogDescription>
                         <Separator/>
-                        <div className="flex gap-2 text-lg items-start">
+                        <div className="flex gap-2 text-lg items-center">
                             <MenuCommand className='grow'></MenuCommand>
                         </div>
                     </DialogHeader>
@@ -45,15 +45,21 @@ function TableDialog(props, ref) {
                                     <TableHead className='w-7/12'>Items</TableHead>
                                     <TableHead>Quantity</TableHead>
                                     <TableHead>Price</TableHead>
-                                    <TableHead></TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 <TableRow>
                                     <TableCell>Paneer cheese roll</TableCell>
-                                    <TableCell>2</TableCell>
+                                    <TableCell className="flex items-center space-x-2">
+                                        <Button size='min' variant='ghost' className="bg-red-300 hover:bg-red-200 p-[1px]">
+                                            <TriangleLeftIcon/>
+                                        </Button>
+                                        <span>2</span>
+                                        <Button size='min' variant='ghost' className="bg-green-300 hover:bg-green-200 p-[1px]">
+                                            <TriangleRightIcon/>
+                                        </Button>
+                                    </TableCell>
                                     <TableCell>90</TableCell>
-                                    <TableCell><TriangleUpIcon/><TriangleDownIcon/></TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
