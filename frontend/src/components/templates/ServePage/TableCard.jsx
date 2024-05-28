@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { setCurrentTable } from "@/store/tableSlice";
 import { useDispatch } from "react-redux";
 function TableCard({tableInfo, className, dialogRef}) {
-    const {no, status, people} = tableInfo;
+    const {no, status, people, total} = tableInfo;
     const dispatch = useDispatch();
     return (
         <>
@@ -21,7 +21,7 @@ function TableCard({tableInfo, className, dialogRef}) {
                 <CardContent className='flex items-center space-x-4 '>
                     <div>People : {people}</div>
                     <Separator orientation="vertical"/>
-                    <div>Total : 240</div>
+                    <div>Total : {total}</div>
                 </CardContent>
                 <CardFooter className="">
                     <Button onClick={()=>{dispatch(setCurrentTable(no));dialogRef.current.click()}}>Serve</Button>

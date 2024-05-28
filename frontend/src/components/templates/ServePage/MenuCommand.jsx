@@ -59,11 +59,12 @@ function MenuCommand({className}) {
         setItem(false);
     }
     const handleBlur = () =>{
+        setTimeout(()=>{setOpen(false)}, 300)
     }
     return (
         <>
             <div className={`relative ${className} `}>
-                <Input ref={inputRef} onFocus={()=>{setOpen(true)}} onBlur={handleBlur} placeholder="Search Menu" value={value} onChange={handleInput}/>
+                <Input ref={inputRef} onBlur={handleBlur} onFocus={()=>{setOpen(true)}}  placeholder="Search Menu" value={value} onChange={handleInput}/>
                 <div className={`${open? '':'hidden'} mt-2 absolute max-h-[300px] overflow-y-auto overflow-x-hidden w-full z-10 [&::-webkit-scrollbar]:hidden border rounded-md shadow-lg`}>
                     {
                         menu

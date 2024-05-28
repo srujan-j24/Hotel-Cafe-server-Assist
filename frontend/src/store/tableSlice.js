@@ -3,42 +3,47 @@ import { createSlice} from "@reduxjs/toolkit";
 const initialState = {
     currentTable: 1,
     tables : [
-
         {
             no: 1,
             status: 'vacant',
             people: 0,
-            items: []
+            items: [],
+            total: 0
         },
         {
             no: 2,
             status: 'occupied',
             people: 0,
-            items: []
+            items: [],
+            total: 0
         },
         {
             no: 3,
             status: 'vacant',
             people: 0,
-            items: []
+            items: [],
+            total: 0
         },
         {
             no: 4,
             status: 'vacant',
             people: 0,
-            items: []
+            items: [],
+            total: 0
         },
         {
             no: 5,
             status: 'vacant',
             people: 0,
-            items: []
+            items: [],
+            total: 0
         },
         {
             no: 6,
             status: 'occupied',
             people: 0,
-            items: []
+            items: [],
+            total: 0
         },
     ]
 }
