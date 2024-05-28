@@ -6,24 +6,25 @@ import { Separator } from "@/components/ui/separator";
 import { useSelector } from "react-redux";
 import MenuCommand from "./MenuCommand";
 import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import OrderItem from "./OrderItem";
 
 
 function TableDialog(props, ref) {
-    const tableNo = useSelector(state => state.currentTable);
-    return (
+    const tableInfo = useSelector(state => state.tables[state.currentTableIdx]);
+    return tableInfo &&  (
         <Dialog>
             <DialogTrigger asChild>
-                <Button className="hidden" ref={ref}>serve</Button>
+                <Button className="hidden" ref={ref}>Serve</Button>
             </DialogTrigger>
                 <DialogContent className="w-[90vw] rounded">
                     <DialogHeader>
                         <DialogTitle className="pb-2">
-                            Table : {tableNo.toString().padStart(3, '0')}
+                            Table : {tableInfo.no}
                         </DialogTitle>
                         <DialogDescription className="flex items-center space-x-4 justify-center">
-                            <span>People : 4</span>
+                            <span>People : {tableInfo.people}</span>
                             <span> | </span>
-                            <span>Total : 240</span>
+                            <span>Total : {tableInfo.total}</span>
                         </DialogDescription>
                         <Separator/>
                         <div className="flex gap-2 text-lg items-center">
@@ -40,6 +41,7 @@ function TableDialog(props, ref) {
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
+                                <OrderItem></OrderItem>
                             </TableBody>
                         </Table>
                     </ScrollArea>

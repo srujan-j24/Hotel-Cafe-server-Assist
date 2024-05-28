@@ -1,17 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { TriangleLeftIcon, TriangleRightIcon } from "@radix-ui/react-icons";
+import { useState } from "react";
 
-function OrderItem({name, key, price, quantity}) {
+function OrderItem() {
+    let name = 'fried rice';
+    let [quantity, setQuantity] = useState(0);
+    let price = 60;
     return (
-        <TableRow key={key}>
+        <TableRow>
             <TableCell>{name}</TableCell>
             <TableCell className="flex items-center space-x-2">
-                <Button size='min' variant='ghost' className="bg-red-300 hover:bg-red-200 p-[1px]">
+                <Button size='min' variant='ghost' className="bg-red-300 hover:bg-red-200 p-[1px]" onClick={()=>{setQuantity(quantity=>quantity-1)}}>
                     <TriangleLeftIcon/>
                 </Button>
-                <span>2</span>
-                <Button size='min' variant='ghost' className="bg-green-300 hover:bg-green-200 p-[1px]">
+                <span>{quantity}</span>
+                <Button size='min' variant='ghost' className="bg-green-300 hover:bg-green-200 p-[1px]" onClick={()=>{setQuantity(quantity=>quantity+1)}}>
                     <TriangleRightIcon/>
                 </Button>
             </TableCell>

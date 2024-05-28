@@ -1,73 +1,29 @@
 import { createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    currentTable: 1,
-    tables : [
-        {
-            no: 1,
-            status: 'vacant',
-            people: 0,
-            items: [],
-            total: 0
-        },
-        {
-            no: 2,
-            status: 'occupied',
-            people: 0,
-            items: [],
-            total: 0
-        },
-        {
-            no: 3,
-            status: 'vacant',
-            people: 0,
-            items: [],
-            total: 0
-        },
-        {
-            no: 4,
-            status: 'vacant',
-            people: 0,
-            items: [],
-            total: 0
-        },
-        {
-            no: 5,
-            status: 'vacant',
-            people: 0,
-            items: [],
-            total: 0
-        },
-        {
-            no: 6,
-            status: 'occupied',
-            people: 0,
-            items: [],
-            total: 0
-        },
-    ]
+    currentTableIdx: 0,
+    tables: []
 }
 
 export const tableSlice = createSlice({
     name: 'tables',
     initialState,
     reducers: {
-        newTable: (state, action) =>{
+        newTable: (state) =>{
             const table = {
-                no: action.payload.no,
-                status: "vacant",
-                people: action.payload.people,
-                items: action.payload.items,
+                no: (state.tables.length+1).toString().padStart(3, '0'),
+                status: 'vacant',
+                people: 0,
+                items: [],
+                total: 0
             }
-            state.tables.push(table);
+            state.tables.push(table)
         },
         additems: (state, action) =>{
-            const table_no = `table_${action.payload.no}`
-            const previtems = state.tables[table_no].items;
-            state.tables[table_no].items = {...previtems, ...action.payload.items};
+            
         },
         setCurrentTable: (state, action)=>{
-            state.currentTable = action.payload;
+                state.currentTableIdx = action.payload;
         }
     }
 });

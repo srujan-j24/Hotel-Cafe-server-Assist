@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import AddTable from "./AddTable";
 
 function Header() {
     const ClientName = "Roll's Corner";
@@ -37,6 +38,7 @@ function Header() {
                             </SheetTitle>
                             <Separator/>
                         </SheetHeader>
+                        <AddTable></AddTable>
                         <SheetFooter></SheetFooter>
                     </SheetContent>
                 </Sheet>
