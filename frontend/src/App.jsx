@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <div className='min-h-svh relative' style={{backgroundImage: `url(${backgroundSvg})`, backgroundPosition: 'center'}}>
+      <div className='min-h-dvh relative' style={{backgroundImage: `url(${backgroundSvg})`, backgroundPosition: 'center'}}>
         <Header></Header>
         <Outlet></Outlet>
       </div>
