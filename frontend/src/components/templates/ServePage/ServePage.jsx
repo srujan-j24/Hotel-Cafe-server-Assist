@@ -5,7 +5,7 @@ import TableCard from "./TableCard";
 import TableDialog from "./TableDialog";
 function ServePage() {
     const dialogRef = useRef(null);
-    const tables  = useSelector(state => state.tables);
+    const tables  = useSelector(state => state.table.tables);
     return (
         <>  
             <ScrollArea className="h-svh pt-12">
