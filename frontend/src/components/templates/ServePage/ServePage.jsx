@@ -8,7 +8,8 @@ function ServePage() {
     const tables  = useSelector(state => state.table.tables);
     return (
         <>  
-            <ScrollArea className="h-dvh pt-12">
+            {/* <ScrollArea className="h-dvh pt-12"> */}
+            <main className="min-h-svh">
                 <div className="grid auto-fit-20 place-items-center gap-y-6 py-6 px-4 gap-x-4" id='tables-grid'>
                     {
                         tables.map((tableInfo, index)=> (
@@ -17,7 +18,8 @@ function ServePage() {
                     }
                 </div>
                 <TableDialog ref={dialogRef}></TableDialog>
-            </ScrollArea>
+            </main>
+            {/* </ScrollArea> */}
         </>
     );
 }
