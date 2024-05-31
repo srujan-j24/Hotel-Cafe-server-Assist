@@ -6,7 +6,7 @@ import { setCurrentTable } from "@/store/tableSlice";
 import { useDispatch } from "react-redux";
 
 function TableCard({tableInfo, className, dialogRef}) {
-    const {no, status, people, total, index, items} = tableInfo;
+    const {no, status, people, index, items} = tableInfo;
     const dispatch = useDispatch();
     return (
         <>
