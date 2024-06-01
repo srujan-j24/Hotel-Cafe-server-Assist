@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -7,6 +7,7 @@ import LoginPage from './components/templates/LoginPage/LoginPage.jsx'
 import ServePage from './components/templates/ServePage/ServePage.jsx'
 import { Provider } from 'react-redux';
 import { store } from './store/store.js'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+
   <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router}/>
