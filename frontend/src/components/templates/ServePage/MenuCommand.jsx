@@ -44,7 +44,7 @@ function MenuCommand({className}) {
                     {
                         menu
                             .filter((item)=>{return item.name.toLowerCase().includes(value.name.toLowerCase())})
-                            .map(item => (<div className="relative flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 border border-x-0 border-t-0 hover:bg-secondary bg-background" key={item.name} value={item.name} onClick={()=>{selectItem(item)}}>{item.name}</div>))
+                            .map(item => (<div className="relative flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 border border-x-0 border-t-0 hover:bg-secondary bg-background " key={item.name} value={item.name} onClick={()=>{selectItem(item)}}>{item.name}</div>))
                     }
                 </div>  
             </div>

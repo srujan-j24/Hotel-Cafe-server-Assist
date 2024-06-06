@@ -8,6 +8,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import AddTable from "./AddTable";
+import ThemeToggle from "./ThemeToggle";
 
 function Header() {
     const ClientName = "Roll's Corner";
@@ -19,12 +20,15 @@ function Header() {
     return (
         <>
             <nav className="z-10 flex bg-primary w-full items-center mt-0 sm:px-6 absolute top-0 px-4 h-12">
-                <h1 className="font-semibold text-foreground text-2xl">{ClientName}</h1>
-                { nav && 
+                <h1 className="font-semibold text-primary-foreground text-2xl">{ClientName}</h1>
+                
+                { nav &&
+                <>
+                <ThemeToggle className="ml-auto mr-3"></ThemeToggle>
                 <Sheet>
-                    <SheetTrigger asChild className="ml-auto  transition-all">
-                        <Button variant='ghost' size='icon' className='transition-all'>
-                            <HamburgerMenuIcon className="h-6 w-6"/>
+                    <SheetTrigger asChild className="ml-0 transition-all">
+                        <Button variant='secondary' size='icon' className='transition-all'>
+                            <HamburgerMenuIcon className="h-6 w-6" />
                         </Button>
                     </SheetTrigger>
                     <SheetContent>
@@ -42,6 +46,7 @@ function Header() {
                         <SheetFooter></SheetFooter>
                     </SheetContent>
                 </Sheet>
+                </>
                 }       
             </nav>
         </>

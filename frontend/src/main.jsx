@@ -7,6 +7,7 @@ import LoginPage from './components/templates/LoginPage/LoginPage.jsx'
 import ServePage from './components/templates/ServePage/ServePage.jsx'
 import { Provider } from 'react-redux';
 import { store } from './store/store.js'
+import { ThemeProvider } from './ThemeProvider.jsx'
 
 
 const router = createBrowserRouter(
@@ -23,7 +24,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router}/>
+      <ThemeProvider defaultTheme='light' storageKey='web_assist_theme'>
+        <RouterProvider router={router}/>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>,
 )

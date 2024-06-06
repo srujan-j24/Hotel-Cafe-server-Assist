@@ -27,7 +27,7 @@ function LoginForm({name}) {
 					<Button className='w-full text-lg' onClick={()=>{navigate('serve')}}>
 						Login
 					</Button>
-					<Button variant='link' className='text-primary-foreground'>Forgot Password ?</Button>
+					<Button variant='link' className='text-secondary-foreground'>Forgot Password ?</Button>
 				</CardFooter>
 				
 

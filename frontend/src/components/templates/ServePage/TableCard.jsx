@@ -10,7 +10,7 @@ function TableCard({tableInfo, className, dialogRef}) {
     const dispatch = useDispatch();
     return (
         <>
-            <Card key={no} className={`w-80 min-w-56 ${className} shadow`}>
+            <Card key={no} className={`w-80 min-w-56 ${className} shadow hover:border-primary`}>
                 <CardHeader>
                     <CardTitle className="text-2xl">
                         Table : {no}

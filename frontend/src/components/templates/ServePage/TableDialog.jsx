@@ -23,7 +23,7 @@ function TableDialog(props, ref) {
             </DialogTrigger>
                 <DialogContent className="w-[90vw] rounded">
                     <DialogHeader>
-                        <DialogTitle className="pb-2">
+                        <DialogTitle className="pb-2 text-foreground">
                             Table : {tableInfo.no}
                         </DialogTitle>
                         <DialogDescription className="flex items-center space-x-4 justify-center">

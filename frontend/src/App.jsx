@@ -3,15 +3,26 @@ import './App.css'
 import Header from './components/templates/Header'
 import { Outlet } from 'react-router-dom'
 import backgroundSvg from './assets/background.svg'
+import backgroundSvgDark from './assets/background dark.svg'
 import { ScrollArea } from './components/ui/scroll-area'
-import { createContext, useRef } from 'react'
+import { createContext, useContext, useEffect, useRef, useState } from 'react'
+import { ThemeProvider, ThemeProviderContext, useTheme } from './ThemeProvider'
+
 function App() {
+  const {theme, setTheme} = useTheme();
+  const [bgImage, setBgImage] = useState(theme == 'light' ? backgroundSvg: backgroundSvgDark) 
+  useEffect(()=>{
+    setBgImage(theme === 'light' ? backgroundSvg: backgroundSvgDark)
+  },[theme])
+  useEffect(()=>{
+    setTheme('light')
+  },[])
   return (
     <>
-        <div className='h-screen relative'  style={{backgroundImage: `url(${backgroundSvg})`, backgroundPosition: 'center'}}>
-          <Header></Header>
-          <Outlet></Outlet>
-        </div>
+          <div className='h-screen relative  bg-background'  style={{backgroundImage: `url(${bgImage})`, backgroundPosition: 'center'}}>
+            <Header></Header>
+            <Outlet></Outlet>
+          </div>
     </>
   )
 }
