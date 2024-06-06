@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useContext, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useSelector } from "react-redux";
 import TableCard from "./TableCard";
 import TableDialog from "./TableDialog";

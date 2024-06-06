@@ -14,12 +14,14 @@ function App() {
   useEffect(()=>{
     setBgImage(theme === 'light' ? backgroundSvg: backgroundSvgDark)
   },[theme])
+
   useEffect(()=>{
     setTheme('light')
   },[])
+  
   return (
     <>
-          <div className='h-screen relative  bg-background'  style={{backgroundImage: `url(${bgImage})`, backgroundPosition: 'center'}}>
+          <div className='h-dhv relative  bg-background'  style={{backgroundImage: `url(${bgImage})`, backgroundPosition: 'center'}}>
             <Header></Header>
             <Outlet></Outlet>
           </div>
