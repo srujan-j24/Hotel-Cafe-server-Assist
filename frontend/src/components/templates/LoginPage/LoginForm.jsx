@@ -10,7 +10,7 @@ function LoginForm({name}) {
 	const navigate = useNavigate();
 	return (
 		<>
-			<Card className="flex flex-col min-w-80 p-4 text-xl sm:text-2xl shadow-2xl transition-all">
+			<Card className="flex flex-col min-w-80 p-4 text-xl sm:text-2xl shadow-2xl transition-all focus-within:border-ring">
 				<CardHeader>
 					<CardTitle className='text-center leading-8'>
 						Welcome to Server Assist
