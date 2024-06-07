@@ -26,8 +26,8 @@ function Header() {
                 <>
                 <ThemeToggle className="ml-auto mr-3"></ThemeToggle>
                 <Sheet>
-                    <SheetTrigger asChild className="ml-0 transition-all">
-                        <Button variant='secondary' size='icon' className='transition-all'>
+                    <SheetTrigger asChild className="ml-0 transition-all ">
+                            <Button variant='transparent' size='icon' className='transition-all text-primary-foreground' >
                             <HamburgerMenuIcon className="h-6 w-6" />
                         </Button>
                     </SheetTrigger>

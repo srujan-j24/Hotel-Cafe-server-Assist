@@ -26,11 +26,11 @@ function OrderItem({item}) {
             <TableCell>{name}</TableCell>
             <TableCell >
                 <div className="flex space-x-2 justify-center">
-                <Button size='min' variant='ghost' className="bg-red-300 hover:bg-red-200 p-[1px]" onClick={decrease} disabled={decreaseDisabled}>
+                <Button size='min' variant='ghost' className="bg-red-300 hover:bg-red-200 p-[1px] text-primary-foreground" onClick={decrease} disabled={decreaseDisabled}>
                     <TriangleLeftIcon/>
                 </Button>
                 <span>{quantity}</span>
-                <Button size='min' variant='ghost' className="bg-green-300 hover:bg-green-200 p-[1px]" onClick={increase}>
+                <Button size='min' variant='ghost' className="bg-green-300 hover:bg-green-200 p-[1px] text-primary-foreground" onClick={increase}>
                     <TriangleRightIcon/>
                 </Button>
                 </div>
