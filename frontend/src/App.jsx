@@ -21,7 +21,7 @@ function App() {
   
   return (
     <>
-          <div className='h-dhv relative  bg-background'  style={{backgroundImage: `url(${bgImage})`, backgroundPosition: 'center'}}>
+          <div className='h-dhv relative  bg-background transition-all duration-500'  style={{backgroundImage: `url(${bgImage})`, backgroundPosition: 'center'}}>
             <Header></Header>
             <Outlet></Outlet>
           </div>
