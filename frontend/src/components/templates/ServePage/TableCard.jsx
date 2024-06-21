@@ -30,7 +30,7 @@ function TableCard({tableInfo, className, dialogRef}) {
                 </CardContent>
                 <CardFooter className="grid grid-cols-2 gap-4">
                     <Button onClick={()=>{dispatch(setCurrentTable(index));dialogRef.current.click()}}>Serve</Button>
-                    <Button variant="secondary" >Billing</Button>
+                    <Button variant="secondary">Billing</Button>
                 </CardFooter>
             </Card>
         </>

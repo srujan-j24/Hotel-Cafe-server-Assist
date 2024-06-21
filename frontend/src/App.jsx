@@ -4,9 +4,9 @@ import Header from './components/templates/Header'
 import { Outlet } from 'react-router-dom'
 import backgroundSvg from './assets/background.svg'
 import backgroundSvgDark from './assets/background dark.svg'
-import { ScrollArea } from './components/ui/scroll-area'
-import { createContext, useContext, useEffect, useRef, useState } from 'react'
-import { ThemeProvider, ThemeProviderContext, useTheme } from './ThemeProvider'
+import { useEffect,useState } from 'react'
+import { useTheme } from './ThemeProvider'
+import conf from './conf/conf'
 
 function App() {
   const {theme, setTheme} = useTheme();
@@ -17,14 +17,15 @@ function App() {
 
   useEffect(()=>{
     setTheme('light')
+    console.log(conf.appwriteDatabaseId)
   },[])
   
   return (
     <>
-          <div className='h-dhv relative  bg-background transition-all duration-500'  style={{backgroundImage: `url(${bgImage})`, backgroundPosition: 'center'}}>
-            <Header></Header>
-            <Outlet></Outlet>
-          </div>
+        <div className='h-dhv relative  bg-background transition-all duration-500'  style={{backgroundImage: `url(${bgImage})`, backgroundPosition: 'center'}}>
+          <Header></Header>
+          <Outlet></Outlet>
+        </div>
     </>
   )
 }

@@ -3,35 +3,28 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const initialState = {
-    theme: 'system',
+    theme: 'dark',
     setTheme: () => null,
 }
 
 export const ThemeProviderContext = createContext(initialState);
 
-export function ThemeProvider({children, defaultTheme='system', storageKey='web_assist_theme', ...props}){
+export function ThemeProvider({children, defaultTheme='light', storageKey='web_assist_theme', ...props}){
     const [theme, setTheme] = useState(()=>{
         (localStorage.getItem(storageKey)) || defaultTheme
     })
 
     useEffect(()=>{
+        console.log(localStorage.getItem(storageKey))
         const root = window.document.documentElement
         root.classList.remove('light', 'dark')
-        if(theme != 'system'){
-            root.classList.add(theme);
-        }else{
-            console.log(window.matchMedia("(prefers-color-scheme: dark)"))
-            const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-                .matches ? 'dark' : 'light';
-            root.classList.add(systemTheme);
-            setTheme(systemTheme)
-        }
+        root.classList.add(theme);
     }, [theme])
 
     const value = {
         theme: theme,
         setTheme: (theme) =>{
-            localStorage.setItem(storageKey, theme)
+            localStorage.setItem(storageKey, theme);
             setTheme(theme)
         }
     }

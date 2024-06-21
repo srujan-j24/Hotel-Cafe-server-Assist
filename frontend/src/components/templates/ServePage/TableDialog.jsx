@@ -21,7 +21,7 @@ function TableDialog(props, ref) {
             <DialogTrigger asChild>
                 <Button className="hidden" ref={ref}>Serve</Button>
             </DialogTrigger>
-                <DialogContent className="w-[90vw] rounded">
+                <DialogContent className="w-[90vw] rounded bg-background">
                     <DialogHeader>
                         <DialogTitle className="pb-2 text-foreground">
                             Table : {tableInfo.no}
